@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Meal Details Page</title>
+    
+    <!-- bootstrap css library link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <div class="px-4 py-5 my-5 text-center">
+        <img class="d-block mx-auto mb-4" src="https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg" alt="" width="500" height="350">
+        <h1 class="display-5 fw-bold" id="food-name">Food-Meal Name</h1>
+        
+        <div class="col-lg-6 mx-auto">
+            <ul class="list-group text-start m-4 " id="ingredients">
+                <li class="list-group-item">
+                  <input class="form-check-input me-1 " type="checkbox" >
+                  <span class="fw-bold text-secondary"> 1st item</span> <span> : 1/2 cup</span>
+                </li>
+                
+              </ul>
+          <p class="lead mb-4" id="description">description</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3" id="fav-btn">Add To Favourites</button>
+            <button type="button" class="btn btn-danger btn-lg px-4 " id="vid-btn">Watch the Video</button>
+          </div>
+        </div>
+      </div>
+      
+    
+</body>
+</html>
