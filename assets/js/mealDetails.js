@@ -6,14 +6,23 @@ const favBtn =document.getElementById('fav-btn');
 const vidBtn=document.getElementById('vid-btn');
 const url=window.location.href;
 
+//creating xhrrequest
 var xhrRequest = new XMLHttpRequest();
+
 xhrRequest.onload=function(){
     var resObj=JSON.parse(xhrRequest.response);
     resObj=resObj["meals"][0];
+
+    // adding dynamic name
     foodName.innerHTML=resObj["strMeal"];
+
+    //adding dynamic description
     description.innerHTML=resObj["strInstructions"];
+
+    //adding dynamic image
     foodImage.src=resObj["strMealThumb"];
     var items="";
+
     //chaging ingredients
     for(let i=1;i<21;i++){
         if(resObj["strIngredient"+i] ){
@@ -24,9 +33,17 @@ xhrRequest.onload=function(){
         }
     }
     ingredients.innerHTML=items;
-    //fav button click
-    // favBtn.addEventListener()
-    // console.log(resObj);
+
+    //fabourite button click
+    favBtn.addEventListener('click',function(){
+        console.log("added to favourites");
+    });
+    
+    //video button click :redirect to youtube video link
+    vidBtn.addEventListener('click',function(){
+        location.href=resObj["strYoutube"];
+    })
+
 };
 xhrRequest.open("GET", "https://www.themealdb.com/api/json/v1/1/lookup.php?i="+url.split("?id=")[1]);
 
