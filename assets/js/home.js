@@ -1,5 +1,6 @@
 const mealCard= document.getElementById('meal-card');
 const searchbtn=document.getElementById('search-autocomplete');
+const favbtn= document.getElementById('fabouriteMeal');
 let cardHtml="";
 
 //calling random api runction
@@ -17,7 +18,7 @@ function callRandomApi(){
             <p class="card-text">${resObj["strInstructions"].substring(0,160)}&nbsp <a class="link-primary text-decoration-none" > ... read more</a></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-              <button type="button" class="btn btn-secondary ">
+              <button type="button" onclick="setFavHelper(${resObj["idMeal"]})" class="btn btn-secondary " id="fav-btn-${resObj["idMeal"]}">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
               </svg>
@@ -83,3 +84,18 @@ function searchApi(searchText){
     xhrRequest.open("GET", "https://www.themealdb.com/api/json/v1/1/search.php?s="+searchText);
     xhrRequest.send();
 }
+
+function setFavHelper(foodId){
+  if(setFav(foodId)){
+    document.getElementById('fav-btn-'+foodId).className="btn btn-danger ";
+  }else{
+    document.getElementById('fav-btn-'+foodId).className="btn btn-secondary ";
+  }
+
+
+}
+
+//handeling fabourites button click event
+favbtn.addEventListener('click',function(){
+  location.href='./fabouriteMeals.html';
+})

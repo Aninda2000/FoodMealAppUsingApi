@@ -36,7 +36,7 @@ xhrRequest.onload=function(){
 
     //fabourite button click
     favBtn.addEventListener('click',function(){
-        console.log("added to favourites");
+        
     });
     
     //video button click :redirect to youtube video link
