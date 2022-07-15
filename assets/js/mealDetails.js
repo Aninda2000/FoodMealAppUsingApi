@@ -33,11 +33,6 @@ xhrRequest.onload=function(){
         }
     }
     ingredients.innerHTML=items;
-
-    //fabourite button click
-    favBtn.addEventListener('click',function(){
-        
-    });
     
     //video button click :redirect to youtube video link
     vidBtn.addEventListener('click',function(){

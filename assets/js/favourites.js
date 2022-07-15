@@ -1,7 +1,10 @@
+
+//checking localstorage named foodMealFav already present or not
 if(!localStorage.getItem('foodMealFav')){
     localStorage.setItem('foodMealFav','');
 }
 
+//function for getting all fabourites items stored in local storage
 function getAllFav(){
     
     let allItem= localStorage.getItem('foodMealFav');
@@ -12,6 +15,7 @@ function getAllFav(){
     return allItem ;
 }
 
+//checking any particular foodId already presesnt or not
 function setFav(foodId){
     let prevItem=getAllFav();
 

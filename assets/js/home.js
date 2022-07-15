@@ -1,6 +1,7 @@
 const mealCard= document.getElementById('meal-card');
 const searchbtn=document.getElementById('search-autocomplete');
 const favbtn= document.getElementById('fabouriteMeal');
+
 let cardHtml="";
 
 //calling random api runction
@@ -91,11 +92,10 @@ function setFavHelper(foodId){
   }else{
     document.getElementById('fav-btn-'+foodId).className="btn btn-secondary ";
   }
-
-
 }
 
 //handeling fabourites button click event
 favbtn.addEventListener('click',function(){
   location.href='./fabouriteMeals.html';
-})
+});
+
